@@ -22,11 +22,16 @@ describe('Cart', function() {
         assert.equal(cart.getPrice(), 16*0.95);
     });
 
-    it('should return 27.2 for two books', function () {
+    it('should return 21,6 + 15,2 = 36.8', function () {
         cart.addBook("À l’école des sorciers");
         cart.addBook("La Chambre des secrets");
+        cart.addBook("Le Prisonnier d'Azkaban");
+
+        cart.addBook("À l’école des sorciers");
         cart.addBook("La Chambre des secrets");
-        cart.addBook("La Chambre des secrets");
-        assert.equal(cart.getPrice(), 32*0.85);
+
+        assert.equal(cart.getPrice() , 9);
     });
+
+
 });
