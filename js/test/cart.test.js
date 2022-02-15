@@ -30,7 +30,26 @@ describe('Cart', function() {
         cart.addBook("À l’école des sorciers");
         cart.addBook("La Chambre des secrets");
 
-        assert.equal(cart.getPrice() , 9);
+        assert.equal(cart.getPrice() , 36.8);
+    });
+
+    it('should return 32 + 15.2 + 15.2', function () {
+        cart.addBook("À l’école des sorciers");
+        cart.addBook("À l’école des sorciers");
+        cart.addBook("À l’école des sorciers");
+
+
+        cart.addBook("La Chambre des secrets");
+        cart.addBook("La Chambre des secrets");
+        cart.addBook("La Chambre des secrets");
+
+        cart.addBook("La Coupe de feu");
+
+        cart.addBook("Les Reliques de la Mort");
+
+        cart.addBook("Le Prisonnier d'Azkaban");
+
+        assert.equal(cart.getPrice() , 62.4);
     });
 
 
